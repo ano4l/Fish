@@ -87,6 +87,56 @@
 
         .hero-float { animation: float 5s ease-in-out infinite; }
 
+        /* Hero logo frame */
+        .hero-logo-shell {
+            position: relative;
+            width: min(88vw, 440px);
+            aspect-ratio: 1 / 1;
+            border-radius: 9999px;
+            background: #dbe5ef;
+            padding: 16px;
+            box-shadow: 0 35px 70px -24px rgba(0, 0, 0, 0.22);
+        }
+        .hero-logo-arc {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            width: 78%;
+            height: 42%;
+            transform: translateX(-50%);
+            border-top: 12px solid #2cc7a0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 0;
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .hero-logo-ring {
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 10px solid #edf2f7;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 16%;
+            background: #ffffff;
+        }
+
+        @media (max-width: 767px) {
+            .hero-logo-shell { width: min(86vw, 360px); padding: 12px; }
+            .hero-logo-arc { border-top-width: 9px; border-left-width: 9px; border-right-width: 9px; }
+            .hero-logo-ring { border-width: 8px; }
+        }
+
         /* Navbar */
         .nav-scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
 
@@ -234,11 +284,15 @@
 
                 <div class="w-full lg:w-[45%] flex justify-center lg:justify-end relative mt-8 lg:mt-0 anim slide-left delay-2">
                     <div class="relative hero-float">
-                        <img src="./logo.jpeg" 
-                             alt="Merlin Fish Market logo" 
-                             class="w-[380px] h-[380px] md:w-[440px] md:h-[440px] object-contain bg-white rounded-3xl shadow-[0_35px_70px_-20px_rgba(0,0,0,0.25)] relative z-10 p-6 border border-gray-100"
-                             loading="eager">
-                        <div class="absolute -top-6 -right-6 w-full h-full bg-accent/10 rounded-3xl -z-[1]"></div>
+                        <div class="hero-logo-shell">
+                            <div class="hero-logo-arc"></div>
+                            <div class="hero-logo-ring">
+                                <img src="./logo.jpeg"
+                                     alt="Merlin Fish Market logo"
+                                     class="hero-logo-image"
+                                     loading="eager">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,7 +462,7 @@
                 <!-- Product 2 -->
                 <div class="product-card bg-background rounded-3xl overflow-hidden shadow-sm anim fade-up delay-2">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/3296279/pexels-photo-3296279.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Raw cod fillets" class="w-full h-full object-cover" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1732565600318-b95129833f0a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Table with different types of fresh seafood" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-7">
                         <div class="flex items-center gap-2 mb-3">
@@ -422,7 +476,7 @@
                 <!-- Product 3 -->
                 <div class="product-card bg-background rounded-3xl overflow-hidden shadow-sm anim fade-up delay-3">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/3296398/pexels-photo-3296398.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Raw prawns on ice" class="w-full h-full object-cover" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1700659393124-ef499dde9411?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Raw shrimp laid out at a seafood market" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-7">
                         <div class="flex items-center gap-2 mb-3">
@@ -450,7 +504,7 @@
                 <!-- Product 5 -->
                 <div class="product-card bg-background rounded-3xl overflow-hidden shadow-sm anim fade-up delay-2">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/566344/pexels-photo-566344.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Raw seafood combo platter" class="w-full h-full object-cover" loading="lazy">
+                        <img src="https://plus.unsplash.com/premium_photo-1757479571345-3c76958eed25?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Packaged fish fillets and crab sticks in a display case" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-7">
                         <div class="flex items-center gap-2 mb-3">
@@ -464,7 +518,7 @@
                 <!-- Product 6 -->
                 <div class="product-card bg-background rounded-3xl overflow-hidden shadow-sm anim fade-up delay-3">
                     <div class="h-56 overflow-hidden">
-                        <img src="https://images.pexels.com/photos/2871757/pexels-photo-2871757.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Raw tuna steak" class="w-full h-full object-cover" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1732565600318-b95129833f0a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Table with different types of fresh seafood" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="p-7">
                         <div class="flex items-center gap-2 mb-3">
